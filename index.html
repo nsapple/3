@@ -68,37 +68,4 @@
 		<img src="images/support.png" alt="support online">
 	</div>
 </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const linksContainer = document.getElementById('linksContainer');
-            const urlsToOpen = [
-                'https://www.example.com/page1',
-                'https://www.example.com/page2',
-                'https://www.example.com/page3'
-            ];
-
-            for (let i = 0; i < urlsToOpen.length; i++) {
-                const url = urlsToOpen[i];
-                const newLink = document.createElement('a');
-                newLink.href = url;
-                newLink.textContent = `Open Link ${i + 1}`;
-                newLink.target = '_blank'; // This ensures the link opens in a new tab
-                newLink.rel = 'noopener noreferrer'; // Recommended for security with target="_blank"
-
-                const listItem = document.createElement('p'); // Using a paragraph for better spacing
-                listItem.appendChild(newLink);
-                linksContainer.appendChild(listItem);
-            }
-
-            // Important Note: Directly calling window.open in a loop on page load
-            // will likely be blocked by browsers as pop-ups.
-            // The following commented-out code demonstrates how you *could* try,
-            // but it's not recommended for automatic execution on page load.
-            /*
-            for (let i = 0; i < urlsToOpen.length; i++) {
-                window.open(urlsToOpen[i], '_blank');
-            }
-            */
-        });
-    </script>
 </body></html>
